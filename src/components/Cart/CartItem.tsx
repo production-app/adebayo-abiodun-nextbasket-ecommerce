@@ -33,10 +33,12 @@ function CartItem({
       <Box
         sx={{
           display: { xs: "block", md: "grid" },
+          borderRadius: 1,
         }}
         gridTemplateColumns="repeat(12, 1fr)"
         gap={1}
         borderBottom={"1px solid #212121"}
+        borderRadius="10px"
         padding="8px"
       >
         <Box gridColumn="span 4">

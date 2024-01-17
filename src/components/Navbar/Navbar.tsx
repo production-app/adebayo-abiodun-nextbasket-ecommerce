@@ -20,6 +20,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import Modal from "@mui/material/Modal";
 import CartItem from "../Cart/CartItem";
 import WishlistItem from "../Wishlist/WishlistItem";
+import { Title } from "@mui/icons-material";
 
 const pages = ["Products", "Pricing", "Blog"];
 
@@ -87,8 +88,10 @@ function Navbar() {
     fontWeight: "bold",
     minHeight: 0,
     minWidth: 0,
+    margin: 0,
     padding: "4px",
   };
+
   return (
     <AppBar
       position="static"
@@ -179,7 +182,7 @@ function Navbar() {
               </MenuItem>
 
               <MenuItem>
-                <Button sx={{ margin: "auto" }}>
+                <Button sx={{ margin: "10px" }}>
                   <span className="textIconAlign">
                     <PersonOutlineOutlinedIcon />
                     Login / Register
@@ -192,13 +195,16 @@ function Navbar() {
                 </Button>
               </MenuItem>
               <MenuItem>
-                <Button sx={{ margin: "auto" }} onClick={handleOpen}>
+                <IconButton sx={{ margin: "auto" }} onClick={handleOpen}>
                   <ShoppingCartOutlinedIcon />
-                </Button>
+                  {/* {cart.length > 1 ? cart.length : null} */}
+                  <span> {cart.length > 0 ? cart.length : null}</span>
+                </IconButton>
               </MenuItem>
               <MenuItem>
                 <Button sx={{ margin: "auto" }} onClick={handleOpenModalWL}>
                   <FavoriteBorderOutlinedIcon />
+                  <span> {wishlist.length > 0 ? wishlist.length : null}</span>
                 </Button>
               </MenuItem>
             </Menu>
@@ -272,9 +278,12 @@ function Navbar() {
               </Button>
               <Button sx={rightMenuButtonXS} onClick={handleOpen}>
                 <ShoppingCartOutlinedIcon />
+                <span> {cart.length > 0 ? cart.length : null}</span>
               </Button>
+
               <Button sx={rightMenuButtonXS} onClick={handleOpenModalWL}>
                 <FavoriteBorderOutlinedIcon />
+                <span> {wishlist.length > 0 ? wishlist.length : null}</span>
               </Button>
             </Box>
           </Box>
