@@ -81,7 +81,7 @@ function DynamicItems({
                         fontWeight={700}
                         textAlign="center"
                         color="#252B42"
-                        fontSize="16px"
+                        fontSize="15px"
                       >
                         {product.title}
                       </Typography>
@@ -134,7 +134,13 @@ function DynamicItems({
           <Button
             variant="outlined"
             onClick={handleLoadMore}
-            sx={{ margin: "auto", display: "block", mt: "40px" }}
+            sx={{
+              margin: "auto",
+              display: "block",
+              mt: "40px",
+              color: "#23a6f0",
+              borderColor: "#23a6f0",
+            }}
           >
             LOAD MORE PRODUCTS
           </Button>
